@@ -64,32 +64,32 @@ function bonusCalc() {
   let bonus = 0;
   
   if (employeeInfo.reviewRating < 2){
-    return bonus = 0;
+     bonus = 0;
   }
   else if (employeeInfo.reviewRating === 3) {
-    return bonus = bonus + .04; 
+     bonus = bonus + .04; 
   }
   else if (employeeInfo.reviewRating === 4) {
-    return bonus = bonus + .06;
+     bonus = bonus + .06;
   }
   else if (employeeInfo.reviewRating === 5) {
-    return bonus = bonus + .10;
+     bonus = bonus + .10;
   }
 
   if (employeeInfo.employeeNumber.length >= 4 && employeeInfo.reviewRating > 2) {
-    return bonus = bonus + .05;
+     bonus = bonus + .05;
   } 
   if (employeeInfo.annualSalary > 65000 && employeeInfo.reviewRating > 2) {
-    return bonus = bonus - .01;
+     bonus = bonus - .01;
   }
   if (bonus > .13) {
-    return bonus = .13;
+     bonus = .13;
   } 
   if (bonus < 0) {
-    return bonus = 0;
+     bonus = 0;
   }
 
-  return bonus = bonus * 100;
+  return bonus = bonus;
 }
 
 console.log(bonusCalc());
