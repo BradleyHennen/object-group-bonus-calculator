@@ -41,3 +41,60 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+
+
+
+function findEmployee(employeeName) {
+  for (let i = 0; i < employees.length; i++) {
+    let person = employees[i];
+    if (person.name === employeeName) {
+      return person;
+    }
+  }
+} 
+
+let employeeInfo = findEmployee('Jem');
+
+console.log(employeeInfo.employeeNumber.length);
+
+
+function bonusCalc() {
+
+  let bonus = 0;
+  
+  if (employeeInfo.reviewRating < 2){
+    return bonus = 0;
+  }
+  else if (employeeInfo.reviewRating === 3) {
+    return bonus = bonus + .04; 
+  }
+  else if (employeeInfo.reviewRating === 4) {
+    return bonus = bonus + .06;
+  }
+  else if (employeeInfo.reviewRating === 5) {
+    return bonus = bonus + .10;
+  }
+
+  if (employeeInfo.employeeNumber.length >= 4 && employeeInfo.reviewRating > 2) {
+    return bonus = bonus + .05;
+  } 
+  if (employeeInfo.annualSalary > 65000 && employeeInfo.reviewRating > 2) {
+    return bonus = bonus - .01;
+  }
+  if (bonus > .13) {
+    return bonus = .13;
+  } 
+  if (bonus < 0) {
+    return bonus = 0;
+  }
+
+  return bonus = bonus * 100;
+}
+
+console.log(bonusCalc());
+
+  // employees.name = name;
+  // employees.employeeNumber = employeeNumber
+  // employees.annualSalary = annualSalary
+  // employees.reviewRating = reviewRating
